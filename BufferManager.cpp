@@ -16,8 +16,8 @@ void BufferManager::setBuffer(const int& id){
   sourceView->set_buffer( Buffers[id]->getSourceBuffer() );
 }
 
-void BufferManager::setBuffer(Buffer& buf){
-  sourceView->set_buffer( buf.getSourceBuffer() );
+void BufferManager::setBuffer(Buffer* buf){
+  sourceView->set_buffer( buf->getSourceBuffer() );
 }
 
 Buffer* BufferManager::newBuffer(){

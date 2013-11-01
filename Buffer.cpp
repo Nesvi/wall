@@ -1,6 +1,9 @@
 #include "Buffer.h"
 #include <iostream>
 #include <string>
+
+Gsv::View* Buffer::myView = 0;
+ 
 Buffer::Buffer(const std::string& filename, const std::string& filepath){
   //std::cout << "Creando un buffer con ruta" << std::endl;
   name = filename;
@@ -55,6 +58,7 @@ void Buffer::setText(const std::string& myText){
 }
 
 std::string Buffer::getText(){
+  std::cout << "Estoy siendo llamado" << std::endl;
   std::string out(sourceBuffer->get_text()); 
   return out ;
 }
@@ -92,4 +96,12 @@ int Buffer::getCursorLine(){
 
   return sourceBuffer->get_insert()->get_iter().get_line();
 
+}
+
+void Buffer::setSourceView(Gsv::View* in){
+  myView = in;
+}
+
+void Buffer::setBuffer(){
+  myView->set_buffer(getSourceBuffer());
 }

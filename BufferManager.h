@@ -15,7 +15,7 @@ class BufferManager{
  public:
   static void init(Gsv::View&);
   static void setBuffer(const int&);
-  static void setBuffer(Buffer&);
+  static void setBuffer(Buffer*);
   
   static Buffer* newBuffer();
   static Buffer* newBuffer(const std::string&, const std::string&);

@@ -5,8 +5,6 @@
 #include <gtkmm/window.h>
 #include <gtkmm.h>
 #include <gtksourceviewmm.h>
-#include "BufferManager.h"
-#include "BufferLuaInterface.h"
 
 class EditorWindow : public Gtk::Window
 {
@@ -23,7 +21,6 @@ protected:
   Gtk::VBox mainVBox;
   
   Gtk::Entry console;
-  BufferManager BM;
 
 };
 

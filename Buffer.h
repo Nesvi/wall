@@ -17,26 +17,24 @@ class Buffer{
   std::string path;
   std::string lang;
   bool voidPath;
-
+  static Gsv::View* myView;
   Glib::ustring aux;
 
  public:
   int lua_id;
   Buffer(const std::string&,const std::string&);
   Buffer();
-  void setLanguage(const std::string&);
-  /*TODO
-  void deduceLanguage();
-  void loadFile();
-  */
-  Glib::RefPtr<Gsv::Buffer>& getSourceBuffer();
-  void sayHello();
-  void setText(const std::string&);
-  std::string getText();
-  void insertInCursor(const std::string&);
-  void moveCursor(const int&, const int&);
-  void save();
-  int getCursorLine();
+  void setLanguage(const std::string&);//BIND
+  Glib::RefPtr<Gsv::Buffer>& getSourceBuffer();//BIND
+  void sayHello();//BIND
+  void setText(const std::string&);//BIND
+  std::string getText();//BIND
+  void insertInCursor(const std::string&);//BIND
+  void moveCursor(const int&, const int&);//BIND
+  void save();//BIND
+  int getCursorLine();//BIND
+  void setBuffer();//BIND
+  static void setSourceView(Gsv::View*);
 };
 
 #endif

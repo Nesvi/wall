@@ -1,7 +1,7 @@
 print "Loading main" 
 --currentBuffer = Buffer:new("test.lua","/home/nesvi/Escritorio/")
-currentBuffer = Buffer:new("AutoCode.lua","./Extensions/")
-setBuffer(currentBuffer)
+currentBuffer = Buffer:new()
+currentBuffer:setBuffer()
 --[[
 currentBuffer:sayHello()
 system_class_instances[1]:sayHello()

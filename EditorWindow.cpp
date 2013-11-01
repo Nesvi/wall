@@ -1,10 +1,11 @@
 
 #include "EditorWindow.h"
 #include <iostream>
+#include "Lua.h"
+#include "Buffer.h"
 
 EditorWindow::EditorWindow()
 {
-  BufferManager::init(sourceView);
   // Sets the border width of the window.
   set_border_width(10);
   set_default_size(400, 400);
@@ -12,7 +13,8 @@ EditorWindow::EditorWindow()
 
   sourceView.set_auto_indent(true);
   sourceView.set_show_line_numbers(true);
-
+  
+  Buffer::setSourceView(&sourceView);
 
   //mainVBox.set_homogeneous(false);
   mainVBox.pack_start(scrollWindow,true,true);

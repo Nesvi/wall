@@ -1,11 +1,13 @@
 #include "EditorWindow.h"
 #include <gtkmm/application.h>
-
+#include "BufferLuaQB.h"
+#include "Lua.h"
 int main (int argc, char *argv[])
 {
   Gsv::init();
+  
   Lua::init();
-  BufferLuaInterface::init();
+  BufferLuaQB::load(Lua::getL());
 
   Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
 
