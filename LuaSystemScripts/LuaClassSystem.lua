@@ -41,4 +41,4 @@ class.new = function(...) --Creates a new class
 	return newClass
 end
 
-
+print "LuaClassSystem loaded"
