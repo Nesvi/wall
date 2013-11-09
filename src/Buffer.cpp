@@ -105,3 +105,9 @@ void Buffer::setSourceView(Gsv::View* in){
 void Buffer::setBuffer(){
   myView->set_buffer(getSourceBuffer());
 }
+
+void Buffer::setEditable(const bool& in){
+
+  myView->set_editable(in);
+
+}

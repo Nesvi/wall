@@ -24,6 +24,7 @@ class Buffer{
   int lua_id;
   Buffer(const std::string&,const std::string&);
   Buffer();
+
   void setLanguage(const std::string&);//BIND
   Glib::RefPtr<Gsv::Buffer>& getSourceBuffer();//BIND
   void sayHello();//BIND
@@ -34,7 +35,10 @@ class Buffer{
   void save();//BIND
   int getCursorLine();//BIND
   void setBuffer();//BIND
+  void setEditable(const bool&);//BIND
+
   static void setSourceView(Gsv::View*);
+  
 };
 
 #endif
