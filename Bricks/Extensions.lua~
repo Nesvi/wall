@@ -1,6 +1,0 @@
-print "Loading Extensions" 
-dofile "./Extensions/Patterns.lua"
-dofile "./Extensions/Basics.lua"
-dofile "./Extensions/AutoCode.lua"
-dofile "./Extensions/ExampleExtension.lua"
-
