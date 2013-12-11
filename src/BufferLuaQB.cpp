@@ -66,7 +66,7 @@ void BufferLuaQB::load(lua_State* L){
 	lua_register(L,"QBBuffer_getText",BufferLuaQB_getText);
 	lua_register(L,"QBBuffer_getCursorLine",BufferLuaQB_getCursorLine);
 	lua_register(L,"QBBuffer_newUserData",BufferLuaQB_newUserData);
-	luaL_dofile(L,"Buffer.lua");
+	//luaL_dofile(L,"Buffer.lua");
 }
 
 Buffer* BufferLuaQB::getInstance(lua_State* L){

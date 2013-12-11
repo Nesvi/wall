@@ -1,3 +1,19 @@
+print "-->Loading Core"
+function fileToString(file)
+    local f = io.open(file, "rb")
+    if f == nil then log ("Couldn't open file " .. file ); return nil end 
+    local content = f:read("*all")
+    f:close()
+    return content
+end
+
+function stringToFile(str, file)
+	local f,err = io.open(file,"w")
+	if not f then return print(err) end
+	f:write(str)
+	f:close()
+end	
+
 function system(a)
 	local f = io.popen(a) -- runs command
 	local l = f:read("*a") -- read output of command
@@ -42,13 +58,21 @@ function start()
 end
 
 function loadCoreBricks()
-	local el = system("ls "..wallFolder.."/System/CoreBricks/*.lua")
-	
+
+	--First and more important things to load
+	local el = system("ls "..wallFolder.."/System/CoreBricks/First/*.lua")
 	el = split(el,"%s")
 	for i=1, #el do		
 		dofile(el[i])	
 	end
+	
+	--The other core bricks
+	el = system("ls "..wallFolder.."/System/CoreBricks/*.lua")
+	el = split(el,"%s")
+	for i=1, #el do
+		dofile(el[i])	
+	end
 end
+dcall(loadCoreBricks)
 
-loadCoreBricks()
-print "Core loaded"
+print "-->Core loaded"

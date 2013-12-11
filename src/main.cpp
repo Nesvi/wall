@@ -5,13 +5,18 @@
 int main (int argc, char *argv[])
 {
   Gsv::init();
-  
   Lua::init();
-  BufferLuaQB::load(Lua::getL());
-
+  
+  //Load the graphic enviroment first of all to let the lua VM use it
   Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
 
   EditorWindow editor;
+  
+  //First load c++ side of classes
+  BufferLuaQB::load(Lua::getL());
+
+  //Then init the load of all the core, bricks, etc
+  Lua::InitSequence();
 
   Lua::Main();
 

@@ -29,10 +29,11 @@ EditorWindow::EditorWindow()
 
   show_all_children();
   console.set_visible(false);
- 
+  
   Glib::RefPtr<Gtk::CssProvider> cssProvider = Gtk::CssProvider::create();
-  cssProvider->load_from_file(Gio::File::create_for_path("/home/nesvi/MisProgramas/WALL/Themes/gtk-3.0/gtk.css"));
+  cssProvider->load_from_file(Gio::File::create_for_path("/home/nesvi/MisProgramas/WALL/Themes/gtk.css"));
   get_style_context()->add_provider_for_screen(Gdk::Screen::get_default(), cssProvider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  
 }
 
 EditorWindow::~EditorWindow()

@@ -23,5 +23,7 @@ public:
   static void loadScript(const char* );
   static lua_State* getL();
   static void init();
+  static void InitSequence();
+
   static void Main();
 };

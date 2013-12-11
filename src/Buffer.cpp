@@ -58,7 +58,6 @@ void Buffer::setText(const std::string& myText){
 }
 
 std::string Buffer::getText(){
-  std::cout << "Estoy siendo llamado" << std::endl;
   std::string out(sourceBuffer->get_text()); 
   return out ;
 }

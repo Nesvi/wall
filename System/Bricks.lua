@@ -1,3 +1,4 @@
+print "-->Loading Bricks"
 function loadExtensions()
 	local el = system("ls "..wallFolder.."/Bricks/*.lua")
 	el = split(el,"%s")
@@ -8,4 +9,4 @@ end
 
 dcall(loadExtensions)
 
-print "-->Extensions loaded"
+print "-->Bricks loaded"
